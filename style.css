@@ -1,0 +1,52 @@
+:root {
+  --bg-color: #161a1d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #161a1d;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================================== */
+
+.blogArtParent {
+  max-width: 500px;
+  width: 100%;
+}
+
+[data-expandable] [data-contentToExpand] {
+  --line-height: 1.5;
+  --lines-toShow: 3;
+  line-height: var(--line-height);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  /* height: calc(var(--line-height) * var(--lines-toShow) * 1rem); */
+}
+
+[data-overflow="true"]::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent, var(--bg-color));
+}
